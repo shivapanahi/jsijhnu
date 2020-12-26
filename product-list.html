@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="app/assets/style/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="app/assets/js/jquery-3.5.1.min.js"></script>
+    <script src="app/assets/js/helper.js"></script>
+    <script src="app/assets/js/cart.js"></script>
+
+    <!-- ~~~~~~~~~~~~~~~~ Data ~~~~~~~~~~~~~~~~ -->
+    <script src="app/assets/data/product.data.js"></script>
+    <script src="app/assets/data/category.data.js"></script>
+    <!-- ~~~~~~~~~~~~~~~~ Data ~~~~~~~~~~~~~~~~ -->
+
+    <!-- ~~~~~~~~~~~~~~~~ Component ~~~~~~~~~~~~~~~~ -->
+    <script src="app/assets/js/component/navigation.js"></script>
+    <script src="app/assets/js/component/slideshow.js"></script>
+    <script src="app/assets/js/component/product.js"></script>
+    <script src="app/assets/js/component/product-list.js"></script>
+    <script src="app/assets/js/component/filter.js"></script>
+    <!-- ~~~~~~~~~~~~~~~~ Component ~~~~~~~~~~~~~~~~ -->
+</head>
+<body>
+<div class="wrapper">
+    <!-- Adaptive -->
+    <section class="section-top">
+        <section class="section-top-desktop">
+            <header class="header box-mode">
+                <div class="header-desktop-right">
+                    <div class="logo">
+                        <img class="logo-image" src="app/assets/img/logo.png" />
+                    </div>
+                    <div class="search">
+                        <input class="search-input" typeof="text" placeholder="جستجو..." />
+                        <button class="search-button">
+                            <i class="feather icon-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="header-desktop-left">
+                    <button class="button-register">ثبت نام</button>
+                    <button class="button-login">ورود</button>
+                </div>
+            </header>
+            <nav class="navigation box-mode">
+                <ul class="items">
+                    <li class="item">
+                        <a class="link" href="index.html">
+                            <i class="feather icon-home"></i>
+                            <span>خانه</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="#">گالری</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="product-list.html">محصولات</a>
+                        <div class="sub-navigation">
+                            <ul class="items">
+                                <li class="item">
+                                    <a class="link" href="product-list.html?category=camera">دوربین</a>
+                                </li>
+                                <li class="item">
+                                    <a class="link" href="product-list.html?category=laptop">لپتاپ</a>
+                                </li>
+                                <li class="item">
+                                    <a class="link" href="product-list.html?category=watch">ساعت</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="#">درباره ما</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="cart-list.html">سبد خرید</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="#">حمایت</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="section-top-mobile">
+            <header class="header box-mode">
+                <div class="header-mobile-right">
+                    <button class="menu-button" onclick="onToggle()"></button>
+                </div>
+                <div class="header-mobile-left">
+                    <div class="logo">
+                        <img class="logo-image" src="app/assets/img/logo.png" />
+                    </div>
+                </div>
+            </header>
+            <div class="search">
+                <input class="search-input" typeof="text" placeholder="جستجو..." />
+                <button class="search-button">
+                    <i class="feather icon-search"></i>
+                </button>
+            </div>
+            <nav id="nav" class="navigation">
+                <div class="navigation-header">
+                    <div class="profile">
+                        <img class="image" src="app/assets/img/profile-placeholder.png" />
+                    </div>
+                    <button class="menu-button-close" onclick="onToggle()">
+                        <i class="feather icon-x"></i>
+                    </button>
+                </div>
+                <div class="menu">
+                    <ul class="items">
+                        <li class="item special">
+                            <a class="link" href="#">ثبت نام</a>
+                        </li>
+                        <li class="item special">
+                            <a class="link" href="#">ورود</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="index.html">خانه</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#">گالری</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#">تماس با ما</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#">درباره ما</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#">دانلود</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#">حمایت</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+    </section>
+    <br />
+    <main class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="filter">
+                        <h2 class="title">مرتب سازی بر اساس قیمت</h2>
+                        <div class="body">
+                            <div class="field-kit">
+                                <label for="sortByPrice" class="label-kit">مرتب سازی</label>
+                                <select class="select-box-kit" id="sortByPrice">
+                                    <option value="0">انتخاب کنید</option>
+                                    <option value="1">صعودی</option>
+                                    <option value="-1">نزولی</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <h2 class="title">بر اساس  رنگ</h2>
+                        <div class="body">
+                            <select class="select-box-kit" id="filterColor">
+                                <option value="null">انتخاب کنید</option>
+                                <option value="white">سفید</option>
+                                <option value="black">سیاه</option>
+                                <option value="grey">خاکستری</option>
+                                <option value="silver">نقره ای</option>
+                                <option value="red">قرمز</option>
+                                <option value="blue">آبی</option>
+                                <option value="green">سبز</option>
+                                <option value="pink">صورتی</option>
+                                <option value="yellow">زرد</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <h2 class="title">بر اساس  قیمت</h2>
+                        <div class="body">
+                            <div class="field-kit">
+                                <label for="filterFromPrice" class="label-kit">از قیمت</label>
+                                <input id="filterFromPrice" class="text-box-kit" type="number" />
+                            </div>
+                            <div class="field-kit">
+                                <label for="filterToPrice" class="label-kit">تا قیمت</label>
+                                <input id="filterToPrice" class="text-box-kit" type="number" />
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button-kit primary-kit full-width-kit" onclick="Filter.run()">اعمال فیلتر</button>
+                </div>
+                <div class="col-md-9">
+                    <div class="product row center-xs" id="product-list"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"></footer>
+</div>
+<script>
+    productList();
+</script>
+</body>
+</html>

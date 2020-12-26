@@ -1,0 +1,13 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.filter .title {
+    border-bottom: 2px solid var(--color-light-grey);
+    padding-bottom: 5px;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1rem;
+}

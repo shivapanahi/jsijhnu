@@ -1,0 +1,157 @@
+.section-top {
+
+}
+
+.section-top .section-top-desktop {
+
+}
+
+.section-top .section-top-desktop .header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.5) 5px 0 10px;
+}
+
+/* Right */
+.section-top .section-top-desktop .header .header-desktop-right {
+    display: flex;
+    align-items: center;
+}
+
+.section-top .section-top-desktop .header .header-desktop-right .logo {
+    height: 43px;
+    width: 100px;
+}
+
+.section-top .section-top-desktop .header .header-desktop-right .search {
+    margin-right: 20px;
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px;
+    display: flex;
+}
+
+.section-top .section-top-desktop .header .header-desktop-right .search .search-input {
+    display: block;
+    padding: 10px;
+    width: calc(100% - 40px);
+    border: none;
+    transition: var(--dimen-transition);
+}
+
+.section-top .section-top-desktop .header .header-desktop-right .search .search-input:focus {
+    padding-right: 20px;
+}
+
+.section-top .section-top-desktop .header .header-desktop-right .search .search-button {
+    display: block;
+    padding: 7px 5px 5px 5px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.4rem;
+}
+
+/* Left */
+.section-top .section-top-desktop .header .header-desktop-left [class^='button-'] {
+    border: none;
+    padding: 10px 40px;
+    border-radius: var(--dimen-radius);
+    color: var(--color-light);
+    cursor: pointer;
+    transition: var(--dimen-transition);
+}
+
+.section-top .section-top-desktop .header .header-desktop-left [class^='button-']:hover {
+    box-shadow: var(--color-dark) 0 0 50px 0 inset;
+}
+
+.section-top .section-top-desktop .header .header-desktop-left .button-register {
+    background-image: linear-gradient(
+        to right,
+        var(--color-primary),
+        var(--color-secondary)
+    );
+}
+
+.section-top .section-top-desktop .header .header-desktop-left .button-login {
+    background-image: linear-gradient(
+            to right,
+            var(--color-pink),
+            var(--color-purple)
+    );
+}
+
+/* ~~~~~~~~~~~~~~~~ Navigation ~~~~~~~~~~~~~~~~ */
+.section-top .section-top-desktop .navigation {
+    background-color: var(--color-secondary);
+    /*background-image: url('../../../img/bg.jpg');*/
+    /*background-size: cover;*/
+}
+
+.section-top .section-top-desktop .navigation > .items {
+    display: flex;
+}
+
+.section-top .section-top-desktop .navigation > .items.active {
+    display: flex;
+}
+
+.section-top .section-top-desktop .navigation > .items > .item {
+    text-align: center;
+    position: relative;
+}
+
+.section-top .section-top-desktop .navigation > .items > .item > .link {
+    display: block;
+    color: var(--color-light);
+    font-size: 1.2rem;
+    padding: 20px 10px;
+    border-bottom: 5px solid transparent;
+    transition: var(--dimen-transition);
+}
+
+.section-top .section-top-desktop .navigation > .items > .item > .link:hover {
+    border-bottom-color: var(--color-accent);
+}
+
+.section-top .section-top-desktop .navigation > .items > .item:hover .sub-navigation {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+    .section-top .section-top-desktop {
+        display: none;
+    }
+}
+
+/* Sub Navigation */
+.section-top .section-top-desktop .navigation > .items > .item .sub-navigation {
+    position: absolute;
+    background-color: var(--color-primary);
+    z-index: 2;
+    right: 0; left: 0;
+    width: 120px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--dimen-transition);
+}
+
+.section-top .section-top-desktop .navigation > .items > .item .sub-navigation .items .item .link {
+    display: block;
+    color: var(--color-light);
+    font-size: 1.2rem;
+    padding: 10px;
+    border-bottom: 5px solid transparent;
+    transition: var(--dimen-transition);
+}
+
+.section-top .section-top-desktop .navigation > .items > .item .sub-navigation .items .item .link:hover {
+    background-color: var(--color-secondary);
+}
+
+/* ~~~~~~~~~~~~~~~~ Navigation ~~~~~~~~~~~~~~~~ */

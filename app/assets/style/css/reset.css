@@ -1,0 +1,24 @@
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+* {
+    box-sizing: border-box;
+    direction: rtl;
+    outline: none;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}

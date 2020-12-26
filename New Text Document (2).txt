@@ -1,0 +1,54 @@
+ function cartList() {
+   
+
+    const getCart= Cart.getData();
+    console.log(getCart);
+
+    const d = getCart.map(d=>d.id);
+    console.log(d);
+
+ 
+    const data= productData.filter(x => d.includes (x.id));
+    console.log(data);
+    
+    
+    const productCart = document.querySelector('#cart-list');
+    data.map((item) => {
+        const test = Cart.searchById(item.id);
+        productCart.innerHTML += `
+            <div class="col-md-3 col-xs-12">
+                <div class="item">
+                    <div class="image">
+                        <img class="source" src="${item.image}" />
+                        <div class="control">
+                            <button class="button">
+                                <i class="feather icon-heart"></i>
+                            </button>
+                            <button class="button">
+                                <i class="feather icon-bookmark"></i>
+                            </button>
+                            <button class="button">
+                                <i class="feather icon-navigation"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <div class="text">
+                            <p class="description">${item.title.littleText()}</p>
+                            <span class="price">${(item.price).formatCurrency()}</span>
+                        </div>
+                        <div class="button-plus-minus">
+                            <button class="button-control" onclick="Cart.update(${item.id}, 1)">
+                                <i class="feather icon-plus"></i>
+                            </button>
+                            // <span class="cart-display">${test.qty}</span>
+                            <button class="button-control" onclick="Cart.update(${item.id}, -1)">
+                                <i class="feather icon-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+    })
+}
+

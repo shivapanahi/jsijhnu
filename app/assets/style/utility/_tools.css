@@ -1,0 +1,11 @@
+.box-mode {
+    padding-right: 10% !important;
+    padding-left: 10% !important;
+}
+
+@media (max-width: 992px) {
+    .box-mode {
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+}

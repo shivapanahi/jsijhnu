@@ -1,0 +1,55 @@
+/* Select */
+.select-box-kit {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--color-light);
+    border-radius: var(--dimen-rounded);
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px 0;
+    height: 30px;
+}
+
+/* TextBox */
+.text-box-kit {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--color-light);
+    border-radius: var(--dimen-rounded);
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px 0;
+    height: 30px;
+}
+
+/* Label */
+.label-kit {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Field */
+.field-kit {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.field-kit .label-kit {
+    width: 100px;
+    margin-bottom: initial;
+}
+
+/* Button */
+.button-kit {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px 0;
+    border-radius: var(--dimen-rounded);
+}
+
+.button-kit.full-width-kit {
+    width: 100%;
+}
+
+.button-kit.primary-kit {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}

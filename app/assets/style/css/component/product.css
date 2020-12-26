@@ -1,0 +1,144 @@
+.product {
+    display: flex;
+}
+
+.product .item {
+    box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px 0;
+    border-radius: var(--dimen-radius);
+    margin-bottom: 15px;
+    transition: var(--dimen-transition);
+}
+
+.product .item:hover {
+    box-shadow: var(--color-dark) 0 5px 15px 0;
+}
+
+.product .item:hover .image .control {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 480px) {
+    .product .item .image .control {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+.product .item .image {
+    height: 200px;
+    width: 100%;
+    border-radius: var(--dimen-radius);
+    overflow: hidden;
+    position: relative;
+}
+
+.product .item .image .source {
+    height: 100%;
+}
+
+.product .item .image .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    border-radius: var(--dimen-radius);
+    padding: 5px 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--dimen-transition);
+}
+
+.product .item .image .control .button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-light);
+    cursor: pointer;
+}
+
+.product .item .body {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    padding: 20px;
+}
+
+.product .item .body .text {
+    font-size: 1.4rem;
+}
+
+.product .item .body .button-cart {
+    position: relative;
+    margin-top: 10px;
+    background-color: var(--color-light-blue);
+    color: var(--color-light);
+    border: none;
+    padding: 10px;
+    border-radius: var(--dimen-radius);
+    cursor: pointer;
+    overflow: hidden;
+    height: 40px;
+}
+
+.product .item .body .button-cart .icon {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    margin-right: -40px;
+    transition: var(--dimen-transition);
+}
+
+.product .item .body .button-cart:hover .icon {
+    margin-right: initial;
+}
+
+/* Plus Minus */
+.product .item .body .button-plus-minus {
+    margin-top: 10px;
+    background-color: var(--color-light);
+    color: var(--color-light);
+    border: 1px solid var(--color-light-blue);
+    padding: 5px;
+    border-radius: var(--dimen-radius);
+    overflow: hidden;
+    height: 40px;
+}
+
+.product .item .body .button-plus-minus .button-control {
+    background-color: var(--color-light-blue);
+    color: var(--color-light);
+    border: none;
+    border-radius: var(--dimen-rounded);
+    cursor: pointer;
+    padding-top: 5px;
+    width: 50px;
+    transition: var(--dimen-transition);
+}
+
+.product .item .body .button-plus-minus .button-control:hover {
+    background-color: var(--color-blue);
+}
+
+.product .item .body .button-plus-minus .cart-display {
+    color: var(--color-light-blue);
+    font-size: 2rem;
+    width: 50px;
+    display: inline-block;
+}
+/* Plus Minus */
+
+.product .item .body .price {
+    color: var(--color-green);
+    font-weight: 700;
+}
+
+
+.btn-collect-cart{
+    background-color: var(--color-light-green);
+    border: none;
+    padding: 10px 30px;
+    border-radius: var(--dimen-rounded);
+    color: var(--color-light);
+    font-size: 2rem;
+}

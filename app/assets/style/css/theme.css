@@ -1,0 +1,32 @@
+.wrapper {
+    /* width: 80%; */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.main {
+}
+
+.footer {
+    background-color: var(--color-dark);
+    height: 200px;
+    margin-top: 10px;
+}
+
+.ads {
+    height: 196px;
+    border-radius: var(--dimen-radius);
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.ads-image {
+    width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+    .ads {
+        height: initial;
+        margin-top: 10px;
+    }
+}

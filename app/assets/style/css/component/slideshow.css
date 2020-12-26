@@ -1,0 +1,117 @@
+.slideshow {
+    height: 400px;
+    overflow: hidden;
+    border-radius: var(--dimen-radius);
+}
+
+.slideshow .items {
+    position: relative;
+}
+
+.slideshow .items .item {
+    transition: 0.5s;
+    position: absolute;
+    opacity: 0;
+    transform: scale(1.2);
+}
+
+.slideshow .items .item.active {
+    z-index: 1;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.slideshow .items .item .image {
+    width: 100%;
+    height: 400px;
+}
+
+.slideshow .items .item .title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--color-light);
+    padding: 20px;
+    border-radius: var(--dimen-radius);
+    margin-right: -100%;
+    transition: 0.8s;
+    font-weight: normal;
+}
+
+.slideshow .items .item.active .title {
+    margin-right: 50px;
+}
+
+.slideshow .control {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    top: calc(50% - 37px);
+}
+
+.slideshow .control [class^=control-button-] {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    border: none;
+    font-size: 5rem;
+    transition: var(--dimen-transition);
+    cursor: pointer;
+}
+
+.slideshow .control [class^=control-button-]:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.slideshow .control .control-button-right {
+    right: 10px
+}
+
+.slideshow .control .control-button-left {
+    left: 10px
+}
+
+
+@media only screen and (max-width: 480px) {
+    .slideshow {
+        height: 200px;
+    }
+
+    .slideshow .items .item .image {
+        height: 200px;
+    }
+
+    .slideshow .control {
+        top: calc(50% - 30px);
+    }
+
+    .slideshow .control .control-button-right {
+        right: 5px
+    }
+
+    .slideshow .control .control-button-left {
+        left: 5px
+    }
+
+    .slideshow .items .item .title {
+        font-size: 1rem;
+        left: 0;
+        padding: 20px;
+        border-radius: var(--dimen-radius);
+        margin-bottom: -100%;
+        transition: 0.8s;
+        width: 300px;
+        text-align: center;
+    }
+
+    .slideshow .items .item.active .title {
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

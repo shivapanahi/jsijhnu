@@ -1,0 +1,6 @@
+:root {
+    --dimen-radius: 15px;
+    --dimen-rounded: 3px;
+    --dimen-circle: 50%;
+    --dimen-transition: 0.3s;
+}

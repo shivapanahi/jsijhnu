@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        const country = [
+            {
+                title: 'iran',
+                province: [
+                    'Tehran', 'Kerman', 'Shiraz'
+                ]
+            },
+            {
+                title: 'usa',
+                province: [
+                    'Texas', 'Newyork', 'Lasvegas'
+                ]
+            },
+            {
+                title: 'france',
+                province: [
+                    'Paris', 'Lion', 'Marsey'
+                ]
+            }
+        ]
+
+        window.onload = () => {
+            document.querySelector('#country').addEventListener('change', (e) => {
+                const provincesTag = document.querySelector('#province');
+
+                const title = e.target.value;
+                const provinces = country.find(x => x.title === title).province;
+                provincesTag.innerHTML = '';
+                provinces.map((item) => {
+                    provincesTag.innerHTML += `<option>${item}</option>`;
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+    <select id="country">
+        <option value="iran">Iran</option>
+        <option value="usa">USA</option>
+        <option value="france">France</option>
+    </select>
+
+    <select id="province">
+
+    </select>
+</body>
+</html>
